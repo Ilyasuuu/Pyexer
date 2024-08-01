@@ -49,8 +49,22 @@ Expected Output: -
 
 [10, 20, 30, 40, 50]
 """
-number_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-for i in range(len(number_list) - 1, -1, -1):
-    if number_list[i] > 50:
-        del number_list[i]
-print(number_list)
+#number_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+#for i in range(len(number_list) - 1, -1, -1):
+#    if number_list[i] > 50:
+#        del number_list[i]
+#print(number_list)
+
+"""
+Exercise 4: Reverse Dictionary mapping
+Given:
+
+ascii_dict = {'A': 65, 'B': 66, 'C': 67, 'D': 68}
+Expected Output:
+
+{65: 'A', 66: 'B', 67: 'C', 68: 'D'}
+"""
+ascii_dict = {'A': 65, 'B': 66, 'C': 67, 'D': 68}
+# Reverse mapping
+new_dict = {value: key for key, value in ascii_dict.items()}
+print(new_dict)
