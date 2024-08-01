@@ -64,7 +64,26 @@ Expected Output:
 
 {65: 'A', 66: 'B', 67: 'C', 68: 'D'}
 """
-ascii_dict = {'A': 65, 'B': 66, 'C': 67, 'D': 68}
+#ascii_dict = {'A': 65, 'B': 66, 'C': 67, 'D': 68}
 # Reverse mapping
-new_dict = {value: key for key, value in ascii_dict.items()}
-print(new_dict)
+#new_dict = {value: key for key, value in ascii_dict.items()}
+#print(new_dict)
+
+"""
+Exercise 5: Display all duplicate items from a list
+Given:
+
+sample_list = [10, 20, 60, 30, 20, 40, 30, 60, 70, 80]
+Expected Output: -
+
+[20, 60, 30]
+"""
+import collections
+
+sample_list = [10, 20, 60, 30, 20, 40, 30, 60, 70, 80]
+
+duplicates = []
+for item, count in collections.Counter(sample_list).items():
+    if count > 1:
+        duplicates.append(item)
+print(duplicates)
