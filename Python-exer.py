@@ -8,10 +8,28 @@ Expected Output
 yM emaN si asseJ  
 
 """
-def reverse_words(str):
-    words = str.split(" ")
-    new_words_list = [word[::-1] for word in words]
-    return " ".join(new_words_list)
+#def reverse_words(str):
+#    words = str.split(" ")
+#    new_words_list = [word[::-1] for word in words]
+#    return " ".join(new_words_list)
 
-str1 = "My name is ilyas"
-print(reverse_words(str1))
+#str1 = "My name is ilyas"
+#print(reverse_words(str1))
+
+"""
+Exercise 2: Read text file into a variable and replace all newlines with space
+Given: Assume you have a following text file (sample.txt).
+
+Line1
+line2
+line3
+line4
+line5
+
+Expected Output:
+Line1 line2 line3 line4 line5
+
+"""
+with open('sample.txt', 'r') as file:
+    data = file.read().replace('\n', ' ')
+    print(data)
