@@ -115,13 +115,30 @@ Expected Output: -
 
 EmmaKellyDevelopers
 """
-def manipulate(x, y):
-    # concatenate two strings
-    def inner_fun(x, y):
-        return x + y
+#def manipulate(x, y):
+#    # concatenate two strings
+#    def inner_fun(x, y):
+#        return x + y
 
-    z = inner_fun(x, y)
-    return z + 'Developers'
+#    z = inner_fun(x, y)
+#    return z + 'Developers'
 
-result = manipulate('Emma', 'Kelly')
-print(result)
+#result = manipulate('Emma', 'Kelly')
+#print(result)
+
+"""
+Exercise 9: Modify the element of a nested list inside the following list
+Change the element 35 to 3500
+
+Given:
+
+list1 = [5, [10, 15, [20, 25, [30, 35], 40], 45], 50]
+Expected Output: -
+
+[5, [10, 15, [20, 25, [30, 3500], 40], 45], 50]
+"""
+list1 = [5, [10, 15, [20, 25, [30, 35], 40], 45], 50]
+# modify item
+list1[1][2][2][1]= 3500
+# print final result
+print(list1)
