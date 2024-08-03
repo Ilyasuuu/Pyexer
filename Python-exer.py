@@ -96,11 +96,32 @@ Exercise 7: Print the following number pattern
 4 4 
 5
 """
-rows = 5
-x = 0
-for i in range(rows, 0, -1):
-    x += 1
-    for j in range(1, i + 1):
-        print(x, end=' ')
-    print('\r')
+#rows = 5
+#x = 0
+#for i in range(rows, 0, -1):
+#    x += 1
+#    for j in range(1, i + 1):
+#        print(x, end=' ')
+#    print('\r')
 
+"""
+Exercise 8: Create an inner function
+Question description: -
+
+Create an outer function that will accept two strings, x and y. (x= 'Emma' and y = 'Kelly'.
+Create an inner function inside an outer function that will concatenate x and y.
+At last, an outer function will join the word 'developer' to it.
+Expected Output: -
+
+EmmaKellyDevelopers
+"""
+def manipulate(x, y):
+    # concatenate two strings
+    def inner_fun(x, y):
+        return x + y
+
+    z = inner_fun(x, y)
+    return z + 'Developers'
+
+result = manipulate('Emma', 'Kelly')
+print(result)
