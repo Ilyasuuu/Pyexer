@@ -78,12 +78,29 @@ Expected Output: -
 
 [20, 60, 30]
 """
-import collections
+#import collections
 
-sample_list = [10, 20, 60, 30, 20, 40, 30, 60, 70, 80]
+#sample_list = [10, 20, 60, 30, 20, 40, 30, 60, 70, 80]
 
-duplicates = []
-for item, count in collections.Counter(sample_list).items():
-    if count > 1:
-        duplicates.append(item)
-print(duplicates)
+#duplicates = []
+#for item, count in collections.Counter(sample_list).items():
+#    if count > 1:
+#       duplicates.append(item)
+#print(duplicates)
+
+"""
+Exercise 7: Print the following number pattern
+1 1 1 1 1 
+2 2 2 2 
+3 3 3 
+4 4 
+5
+"""
+rows = 5
+x = 0
+for i in range(rows, 0, -1):
+    x += 1
+    for j in range(1, i + 1):
+        print(x, end=' ')
+    print('\r')
+
