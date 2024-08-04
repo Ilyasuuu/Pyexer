@@ -185,8 +185,33 @@ Expected Output:
 hnopty cdgino is aeemosw
 
 """
-str = 'python coding is awesome'
-str_splt = str.split()
-sorted_str = [''.join(sorted(word)) for word in str_splt]
-new_str = " ".join(sorted_str)
-print(new_str) 
+#str = 'python coding is awesome'
+#str_splt = str.split()
+#sorted_str = [''.join(sorted(word)) for word in str_splt]
+#new_str = " ".join(sorted_str)
+#print(new_str) 
+
+"""
+Exercise 5: Replace Vowels with the Next Vowel in Each Word
+Given:
+str = 'hello world from python'
+Expected Output:
+hillu wurld frum pythun
+
+"""
+str = 'hello world from python'
+
+def next_vowel(char):
+    vowels = 'aeioua'
+    if char in vowels:
+        return vowels[vowels.index(char) + 1]
+    return char
+
+def replace_vowels(word):
+    return ''.join(next_vowel(char) for char in word)
+
+words = str.split()
+replaced_words = [replace_vowels(word) for word in words]
+final_str = ' '.join(replaced_words)
+
+print(final_str)
