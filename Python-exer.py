@@ -137,8 +137,20 @@ Expected Output: -
 
 [5, [10, 15, [20, 25, [30, 3500], 40], 45], 50]
 """
-list1 = [5, [10, 15, [20, 25, [30, 35], 40], 45], 50]
+#list1 = [5, [10, 15, [20, 25, [30, 35], 40], 45], 50]
 # modify item
-list1[1][2][2][1]= 3500
+#list1[1][2][2][1]= 3500
 # print final result
-print(list1)
+#print(list1)
+"""
+Exercise 2: Capitalize the First and Last Character of Each Word
+Given:
+str = 'hello world from python'
+Expected Output:
+HellO WorlD FroM PythoN
+"""
+
+str = 'hello world from python'
+words = str.split(" ")
+capitalized_words = [word.capitalize() if len(word) == 1 else word[0].upper() + word[1:-1] + word[-1].upper() for word in words]
+print(" ".join(capitalized_words))
