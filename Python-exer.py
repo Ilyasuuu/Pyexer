@@ -150,7 +150,30 @@ Expected Output:
 HellO WorlD FroM PythoN
 """
 
-str = 'hello world from python'
-words = str.split(" ")
-capitalized_words = [word.capitalize() if len(word) == 1 else word[0].upper() + word[1:-1] + word[-1].upper() for word in words]
-print(" ".join(capitalized_words))
+#str = 'hello world from python'
+#words = str.split(" ")
+#capitalized_words = [word.capitalize() if len(word) == 1 else word[0].upper() + word[1:-1] + word[-1].upper() for word in words]
+#print(" ".join(capitalized_words))
+
+"""
+Exercise 3: Remove Duplicate Characters from Each Word
+Given:
+str = 'programming is fun'
+Expected Output:
+progamin is fun
+"""
+sentence = 'programming is fun'
+
+def remove_duplicates(word):
+    seen = set()
+    result = []
+    for char in word:
+        if char not in seen:
+            result.append(char)
+            seen.add(char)
+    return "".join(result)
+
+words = sentence.split()
+unique_words = [remove_duplicates(word) for word in words]
+word_input = " ".join(unique_words)
+print(word_input)
