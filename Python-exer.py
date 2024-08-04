@@ -162,18 +162,31 @@ str = 'programming is fun'
 Expected Output:
 progamin is fun
 """
-sentence = 'programming is fun'
+#sentence = 'programming is fun'
 
-def remove_duplicates(word):
-    seen = set()
-    result = []
-    for char in word:
-        if char not in seen:
-            result.append(char)
-            seen.add(char)
-    return "".join(result)
+#def remove_duplicates(word):
+#    seen = set()
+#    result = []
+#    for char in word:
+#        if char not in seen:
+#            result.append(char)
+#            seen.add(char)
+#    return "".join(result)
 
-words = sentence.split()
-unique_words = [remove_duplicates(word) for word in words]
-word_input = " ".join(unique_words)
-print(word_input)
+#words = sentence.split()
+#nique_words = [remove_duplicates(word) for word in words]
+#word_input = " ".join(unique_words)
+#print(word_input)
+
+"""
+Exercise 4: Sort Characters of Each Word Alphabetically
+str = 'python coding is awesome'
+Expected Output:
+hnopty cdgino is aeemosw
+
+"""
+str = 'python coding is awesome'
+str_splt = str.split()
+sorted_str = [''.join(sorted(word)) for word in str_splt]
+new_str = " ".join(sorted_str)
+print(new_str) 
