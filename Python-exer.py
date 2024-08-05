@@ -238,7 +238,20 @@ Exercise 7: Count the Number of Each Vowel in a String
 """
 Exercise 8: Check if Two Strings are Anagrams
 """
-def Are_Anagrams(str1, str2): return sorted(str1.lower()) == sorted(str2.lower())    
-word1 = 'ilyas'
-word2 = 'sayli'
-print(Are_Anagrams(word1, word2))    
+#def Are_Anagrams(str1, str2): return sorted(str1.lower()) == sorted(str2.lower())    
+#ord1 = 'ilyas'
+#ord2 = 'sayli'
+#print(Are_Anagrams(word1, word2))    
+
+"""
+Exercise 9: Find all subsrtings of a string
+"""
+def find_substrings(sub):
+    substrings = []
+    for i in range(len(sub)):
+        for j in range(i + 1, len(sub) + 1):
+            substrings.append(s[i:j])
+    return substrings
+
+s = "abcde"
+print(find_substrings(s))
