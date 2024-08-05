@@ -246,12 +246,29 @@ Exercise 8: Check if Two Strings are Anagrams
 """
 Exercise 9: Find all subsrtings of a string
 """
-def find_substrings(sub):
-    substrings = []
-    for i in range(len(sub)):
-        for j in range(i + 1, len(sub) + 1):
-            substrings.append(s[i:j])
-    return substrings
+#def find_substrings(sub):
+#    substrings = []
+#    for i in range(len(sub)):
+#        for j in range(i + 1, len(sub) + 1):
+#            substrings.append(s[i:j])
+#    return substrings
 
-s = "abcde"
-print(find_substrings(s))
+#s = "abcde"
+#print(find_substrings(s))
+
+"""
+EX 10: Convert a String to Snake Case
+"""
+def to_snake_case(s):
+    snake_case_str = ''
+    for char in s:
+        if char.isupper():
+            if snake_case_str:# this condition prevents adding an _ at the beginning
+                snake_case_str += '_'
+            snake_case_str += char.lower()
+        else:
+            snake_case_str += char
+    return snake_case_str
+
+input_str = 'ConvertThisStringToSnakeCase'
+print(to_snake_case(input_str))
