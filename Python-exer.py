@@ -220,7 +220,20 @@ hillu wurld frum pythun
 """
 Exercise 6: Reverse the Order of Words in a Sentence
 """
-sentence = "My name is Ilyas"
-split_words = sentence.split()
-reversed_words = split_words[::-1]
-print(" ".join(reversed_words))  
+#sentence = "My name is Ilyas"
+#split_words = sentence.split()
+#reversed_words = split_words[::-1]
+#print(" ".join(reversed_words))  
+
+"""
+Exercise 7: Count the Number of Each Vowel in a String
+"""
+sentence = 'Count the number of each vowel in this sentence'
+
+vowel_counts = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+
+for vowel in sentence.lower():
+    if vowel in vowel_counts:
+        vowel_counts[vowel] += 1
+
+print(vowel_counts)
