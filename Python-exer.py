@@ -259,16 +259,37 @@ Exercise 9: Find all subsrtings of a string
 """
 EX 10: Convert a String to Snake Case
 """
-def to_snake_case(s):
-    snake_case_str = ''
-    for char in s:
-        if char.isupper():
-            if snake_case_str:# this condition prevents adding an _ at the beginning
-                snake_case_str += '_'
-            snake_case_str += char.lower()
-        else:
-            snake_case_str += char
-    return snake_case_str
+#def to_snake_case(s):
+#    snake_case_str = ''
+#    for char in s:
+#        if char.isupper():
+#            if snake_case_str:# this condition prevents adding an _ at the beginning
+ #               snake_case_str += '_'
+#            snake_case_str += char.lower()
+#        else:
+#            snake_case_str += char
+#    return snake_case_str
 
-input_str = 'ConvertThisStringToSnakeCase'
-print(to_snake_case(input_str))
+#input_str = 'ConvertThisStringToSnakeCase'
+#print(to_snake_case(input_str))
+
+"""
+ex18: Rotate a Matrix by 90 Degrees Clockwise
+"""
+def rotate_matrix(matrix):
+    n = len(matrix)
+    for row in range(n):
+        for col in range(row, n):
+            matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+
+    for row in range(n):
+        matrix[row].reverse()
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+rotate_matrix(matrix)
+print(matrix)
