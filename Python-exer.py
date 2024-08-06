@@ -276,20 +276,77 @@ EX 10: Convert a String to Snake Case
 """
 ex18: Rotate a Matrix by 90 Degrees Clockwise
 """
-def rotate_matrix(matrix):
-    n = len(matrix)
-    for row in range(n):
-        for col in range(row, n):
-            matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+#def rotate_matrix(matrix):
+#    n = len(matrix)
+#    for row in range(n):
+#        for col in range(row, n):
+#            matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+#    for row in range(n):
+#        matrix[row].reverse()
 
-    for row in range(n):
-        matrix[row].reverse()
+#matrix = [
+#    [1, 2, 3],
+#    [4, 5, 6],
+#    [7, 8, 9]
+#]
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+#rotate_matrix(matrix)
+#print(matrix)
 
-rotate_matrix(matrix)
-print(matrix)
+"""
+Exercise 17: Implement a Queue Using Two Stacks
+Objective:
+Implement a queue using two stacks.
+Description:
+A queue follows the First-In-First-Out (FIFO) principle. You need to implement the following operations using two stacks:
+enqueue(x): Add an element x to the end of the queue.
+dequeue(): Remove the element from the front of the queue.
+"""
+'''
+class QueueUsingStacks:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+
+    def enqueue(self, x):
+        self.stack1.append(x)
+
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2.pop() if self.stack2 else None
+
+# Example usage:
+queue = QueueUsingStacks()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print(queue.dequeue())   
+print(queue.dequeue())   
+queue.enqueue(4)
+print(queue.dequeue())   
+print(queue.dequeue())   '''
+
+'''
+Exercise 22: Implement a Simple Caesar Cipher
+Objective:
+Implement a function that encodes a string using a Caesar cipher. The Caesar cipher is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.
+
+Description:
+You need to implement a function that takes a string and an integer shift value and returns the encoded string.'''
+
+def caesar_cipher(s, shift):
+    encoded_str = ''
+    for char in s:
+        if char.isalpha():
+            shift_base = ord('A') if char.isupper() else ord('a')
+            encoded_char = chr((ord(char) - shift_base + shift) % 26 + shift_base)
+            encoded_str += encoded_char
+        else:
+            encoded_str += char
+    return encoded_str
+
+input_str = 'See you later'
+shift_value = 2
+print(caesar_cipher(input_str, shift_value))  
