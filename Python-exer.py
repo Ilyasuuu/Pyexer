@@ -329,7 +329,7 @@ print(queue.dequeue())
 print(queue.dequeue())   '''
 
 '''
-Exercise 22: Implement a Simple Caesar Cipher
+Exercise 18: Implement a Simple Caesar Cipher
 Objective:
 Implement a function that encodes a string using a Caesar cipher. The Caesar cipher is a type of substitution cipher in which each letter in the plaintext is shifted a certain number of places down the alphabet.
 
