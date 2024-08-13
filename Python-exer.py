@@ -335,18 +335,27 @@ Implement a function that encodes a string using a Caesar cipher. The Caesar cip
 
 Description:
 You need to implement a function that takes a string and an integer shift value and returns the encoded string.'''
+#def caesar_cipher(s, shift):
+#    encoded_str = ''
+#    for char in s:
+#        if char.isalpha():
+#            shift_base = ord('A') if char.isupper() else ord('a')
+#            encoded_char = chr((ord(char) - shift_base + shift) % 26 + shift_base)
+#            encoded_str += encoded_char
+#        else:            encoded_str += char
+#    return encoded_str
 
-def caesar_cipher(s, shift):
-    encoded_str = ''
-    for char in s:
-        if char.isalpha():
-            shift_base = ord('A') if char.isupper() else ord('a')
-            encoded_char = chr((ord(char) - shift_base + shift) % 26 + shift_base)
-            encoded_str += encoded_char
-        else:
-            encoded_str += char
-    return encoded_str
+#input_str = 'See you later'
+#shift_value = 2
+#print(caesar_cipher(input_str, shift_value))  
 
-input_str = 'See you later'
-shift_value = 2
-print(caesar_cipher(input_str, shift_value))  
+import itertools as its
+def fizz_buzz(n):
+    fizzes = its.cycle([""] * 2 + ["Fizz"])
+    buzzes = its.cycle([""] * 4 + ["Buzz"])
+    fizzes_buzzes = (fizz + buzz for fizz, buzz in zip(fizzes, buzzes))
+    result = (word or n for word, n in zip(fizzes_buzzes, its.count(1)))
+    for i in its.islice(result, 100):
+        print(i)
+
+fizz_buzz(101)
