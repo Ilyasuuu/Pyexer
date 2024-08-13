@@ -349,13 +349,25 @@ You need to implement a function that takes a string and an integer shift value 
 #shift_value = 2
 #print(caesar_cipher(input_str, shift_value))  
 
-import itertools as its
-def fizz_buzz(n):
-    fizzes = its.cycle([""] * 2 + ["Fizz"])
-    buzzes = its.cycle([""] * 4 + ["Buzz"])
-    fizzes_buzzes = (fizz + buzz for fizz, buzz in zip(fizzes, buzzes))
-    result = (word or n for word, n in zip(fizzes_buzzes, its.count(1)))
-    for i in its.islice(result, 100):
-        print(i)
+#import itertools as its
+#def fizz_buzz(n):
+#    fizzes = its.cycle([""] * 2 + ["Fizz"])
+#    buzzes = its.cycle([""] * 4 + ["Buzz"])
+#    fizzes_buzzes = (fizz + buzz for fizz, buzz in zip(fizzes, buzzes))
+#    result = (word or n for word, n in zip(fizzes_buzzes, its.count(1)))
+#    for i in its.islice(result, 100):
+#        print(i)
 
-fizz_buzz(101)
+#fizz_buzz(101)
+
+#Simpler one
+def fizzz_buzz(n):
+    if n % 3 == 0 and n % 5 == 0:
+        return "Fizzbuzz"
+    if n % 3 == 0:
+        return "Fizz"
+    if n % 5 == 0:
+        return "Buzz"
+    return n
+
+print(fizzz_buzz(12))
