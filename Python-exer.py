@@ -361,13 +361,27 @@ You need to implement a function that takes a string and an integer shift value 
 #fizz_buzz(101)
 
 #Simpler one
-def fizzz_buzz(n):
-    if n % 3 == 0 and n % 5 == 0:
-        return "Fizzbuzz"
-    if n % 3 == 0:
-        return "Fizz"
-    if n % 5 == 0:
-        return "Buzz"
-    return n
+#def fizzz_buzz(n):
+#    if n % 3 == 0 and n % 5 == 0:
+#        return "Fizzbuzz"
+#   if n % 3 == 0:
+#        return "Fizz"
+#    if n % 5 == 0:
+#        return "Buzz"
+#    return n
+#print(fizzz_buzz(12))
 
-print(fizzz_buzz(12))
+'''
+Question:
+With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included). and then the program should print the dictionary.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}'''
+dict = {}
+def integral(n):
+    for i in range(1, n+1):
+        dict[i] = i*i
+        print(dict)
+
+integral(7)        
