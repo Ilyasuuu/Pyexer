@@ -378,10 +378,36 @@ Suppose the following input is supplied to the program:
 8
 Then, the output should be:
 {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}'''
-dict = {}
-def integral(n):
-    for i in range(1, n+1):
-        dict[i] = i*i
-        print(dict)
+#dict = {}
+#def integral(n):
+#    for i in range(1, n+1)
+#        dict[i] = i*i
+#        print(dict)
+#integral(7)        
 
-integral(7)        
+'''
+ basic simulation of a movement system where the user inputs directions (UP, DOWN, LEFT, RIGHT) along with a number of steps. 
+ The program tracks the position starting from the origin (0,0)
+ on a 2D plane and calculates the Euclidean distance from the origin after all movements are completed.
+'''
+import math
+pos = [0,0]
+while True:
+    s = input()
+    if not s:
+        break
+    movement = s.split(" ")
+    direction = movement[0]
+    steps = int(movement[1])
+    if direction=="UP":
+        pos[0]+=steps
+    elif direction=="DOWN":
+        pos[0]-=steps
+    elif direction=="LEFT":
+        pos[1]-=steps
+    elif direction=="RIGHT":
+        pos[1]+=steps
+    else:
+        pass
+
+print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))
