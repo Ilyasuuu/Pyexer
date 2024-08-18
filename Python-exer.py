@@ -390,7 +390,7 @@ Then, the output should be:
  The program tracks the position starting from the origin (0,0)
  on a 2D plane and calculates the Euclidean distance from the origin after all movements are completed.
 '''
-import math
+"""import math
 pos = [0,0]
 while True:
     s = input()
@@ -410,4 +410,23 @@ while True:
     else:
         pass
 
-print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))
+print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))"""
+
+'''
+Exercise 2: Group Anagrams
+Objective:
+Given a list of strings, write a function that groups anagrams together
+'''  
+from collections import defaultdict 
+def group_anagrams(words):
+    anagrams = defaultdict(list)
+    for word in words:
+        # Sort the word to create a key
+        sorted_word = ''.join(sorted(word))
+        # Add the word to the corresponding list in the dictionary
+        anagrams[sorted_word].append(word)
+    # Return the grouped anagrams as a list of lists
+    return list(anagrams.values())
+
+S = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(S))     #ouput : [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
