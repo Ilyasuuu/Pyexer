@@ -30,7 +30,7 @@ print(matrix)'''
 #A consecutive subsequence is a sequence of numbers where each number follows the previous one
 #                         with a difference of exactly one.
 
-def longestConsecSubseq(nums):
+'''def longestConsecSubseq(nums):
     num_set = set(nums)  # Convert input list to a set
     longest_streak = 0
     # Loop through each number
@@ -47,5 +47,21 @@ def longestConsecSubseq(nums):
     return longest_streak
 
 nums = [1, 4, 9, 5, 90, -4, -10, 3, 6, 7]
-print('the longest cons subseq is ', longestConsecSubseq(nums))
+print('the longest cons subseq is ', longestConsecSubseq(nums))'''
 
+#Problem: Find the Missing Number
+#Problem: Find the Missing Number
+#Description:
+#You are given an array containing 
+#n distinct numbers taken from the range 0 to n
+#Since the array contains only 
+#n numbers, exactly one number from the range is missing. Your task is to find the missing number.
+
+def find_missing_number(nums):
+    n = len(nums)  
+    expected_sum = n * (n + 1) // 2  
+    actual_sum = sum(nums)  
+    return actual_sum - expected_sum
+
+nums = [1, 4, 9, 5, 90, 0, -10, 3, 6, 7]
+print(find_missing_number(nums))
